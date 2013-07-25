@@ -7,7 +7,9 @@ var my_index = fs.readFileSync("index.html");
   response.send(my_index.toString('utf-8'));
 });
 
-var port = process.env.PORT || 5000;
+app.use(express.static(__dirname));
+
+var port = process.env.PORT || 8080;
 app.listen(port, function() {
   console.log("Listening on " + port);
 });
